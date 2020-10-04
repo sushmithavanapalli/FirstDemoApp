@@ -16,6 +16,8 @@ namespace BookStore
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddMvc();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -26,15 +28,45 @@ namespace BookStore
                 app.UseDeveloperExceptionPage();
             }
 
+            //app.Use(async (context, next) =>
+            //{
+            //    await context.Response.WriteAsync("Hello from my first middleware\n");
+            //    await next();
+            //    await context.Response.WriteAsync("Hello from my first middleware Respone\n");
+            //});
+
+            //app.Use(async (context, next) =>
+            //{
+            //    await context.Response.WriteAsync("Hello from my second middleware\n");
+            //    await next();
+            //    await context.Response.WriteAsync("Hello from my second middleware response\n");
+            //});
+
+            //app.Use(async (context, next) =>
+            //{
+            //    await context.Response.WriteAsync("Hello from my third middleware\n");
+            //    await next();
+            //});
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                //endpoints.Map("/", async context =>
+                //{
+                //    await context.Response.WriteAsync("Hello World!\n");
+                //});
+                endpoints.MapDefaultControllerRoute();
             });
+
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.Map("/sushmitha", async context =>
+            //    {
+            //        await context.Response.WriteAsync("Hello Sushmitha!\n" + env .EnvironmentName );
+            //    });
+            //});
+
         }
     }
 }
