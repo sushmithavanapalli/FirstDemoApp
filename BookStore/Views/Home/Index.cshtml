@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row">
+        <img src="~/images/download.jpg" class="logo row-cols-1" />
+        <h3 class="row-cols-2"><b>Welcome to Book Store Application</b></h3>
+    </div>
+    <br/><button class="btn btn-primary">Click Me</button>
+ </body>
+</html>
+<script src="~/lib/jquery/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            alert("Click Me button was clicked");
+        });
+    });
+</script>
