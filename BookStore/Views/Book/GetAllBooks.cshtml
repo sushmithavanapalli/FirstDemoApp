@@ -1,16 +1,36 @@
-﻿
+﻿@*model IEnumerable<BookModel>*@
 @{
-    Layout = null;
+    ViewData["Title"] = "_ViewStart";
+    ViewData["Desc"] = "All Books";
 }
 
 <!DOCTYPE html>
+<div class="container">
+    <h3>All Books</h3>
+    <div class="row">
+        @foreach (var book in Model)
+        {
+            <div class="col-sm-3">
+                <div class="card">
+                    <img src="~/images/Old Drift.jpg" />
+                    <div class="card-body">
+                        <h5 class="card-title">@book.Title</h5>
+                        <p class="card-text">@book.Description</p>
+                        <div class="d-flex justify-content-between">
+                            <a asp-controller="Book" asp-action="GetBook" asp-route-id="@book.Id" class="btn btn-outline-primary">View Details</a>
+                            <small>@book.Author</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>GetAllBooks</title>
-</head>
-<body>
-    All Book List
-</body>
-</html>
+</div>
+@section sccript{ 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //alert("Document id ready");
+        });
+    </script>
+}

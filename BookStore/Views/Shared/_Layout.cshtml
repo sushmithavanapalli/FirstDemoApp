@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> @ViewData["Desc"] | Book Store Application</title>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a href="/" class="navbar-brand">
+                <img src="~/images/download.jpg" class="img-responsive" />
+                <b>Book Store</b>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collection of nav links, forms, and other content for toggling -->
+            <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="nav-item nav-link" asp-controller="Home" asp-action="AboutUs">About</a>
+                    <a class="nav-item nav-link" asp-controller="Home" asp-action="ContactUs">Contact</a>
+                    <a class="nav-item nav-link" asp-route="ListBooks">All Books</a>
+                    <a class="nav-item nav-link " asp-controller="Book" asp-action="AddBook">Add Book</a>
+                </div>
+
+                <div class="navbar-nav ml-auto action-button">
+                    <div>
+                        <button class="btn btn-success">Login</button>
+                    </div>
+                    &nbsp;
+                    <div>
+                        <button class="btn btn-primary">Register</button>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="border-top footer text-muted text-center">
+        <div>
+            Copyright &copy; @DateTime.Now.Year
+        </div>
+    </footer>
+    <script src="~/js/jquery/jquery.js"></script>
+    @RenderSection("sccript", required: false)
+    
+</body>
+</html>

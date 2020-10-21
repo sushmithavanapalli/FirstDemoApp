@@ -1,0 +1,96 @@
+﻿@*model BookModel;*@
+@{
+    ViewData["Title"] = "_ViewStart";
+    ViewData["Desc"] = "Book Detail " + Model.Title;
+}
+
+<div class="container">
+    <h1 style="table-layout:auto">Book Details</h1>
+    <div class="row">
+        <!-- <div class="col-md-6">
+            <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="1000">
+
+                    </div>
+                    <div class="carousel-item" data-interval="2000">
+
+                    </div>
+                    <div class="carousel-item">
+
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>-->
+        <div class="col-md-6">
+            <div id="SlideShowImages">
+                <div> <img src="~/images/Scarlet.jpg?auto=yes&bg=777&fg=555&text=Second slide" class="d-block w-100" asp-append-version="true" width="400" height="400" alt="First Slide"> </div>
+                <div> <img src="~/images/One of ours.jpg?auto=yes&bg=777&fg=555&text=Third slide" class="d-block w-100" asp-append-version="true" width="400" height="400" alt="Second Slide"> </div>
+                <div> <img src="~/images/Old Drift.jpg?auto=yes&bg=777&fg=555&text=First slide" class="d-block w-100" asp-append-version="true" width="400" height="400" alt="Third Slide"> </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="title">
+                <h1>@Model.Title</h1>
+            </div>
+            <div class="AuthName">
+                <p class="small">By: @Model.Author</p>
+            </div>
+            <div class="Description">
+                <p>
+                    @Model.Description
+                </p>
+            </div>
+            <button class="btn btn-outline-primary">Read Now</button>
+            <hr />
+            <ul class="list-group">
+                <li class="list-group-item"><b>Category - </b>@Model.Category</li>
+                <li class="list-group-item"><b>Total Pages - </b>@Model.TotalPages</li>
+                <li class="list-group-item"><b>Language - </b>@Model.Language</li>
+            </ul>
+
+        </div>
+    </div>
+    <hr />
+    <h3>Similar Books</h3>
+    <div class="row" id="similarBooks">
+        @for (int i = 0; i < 5; i++)
+        {
+            <div class="col-sm-4">
+                <div class="card">
+                    <img src="~/images/One of ours.jpg" />
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <div class="d-flex justify-content-between">
+                            <a href="#" class="btn btn-outline-primary">View Details</a>
+                            <small>author</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+@section sccript{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#SlideShowImages > div:gt(0)").hide();
+            setInterval(function () {
+                $('#SlideShowImages > div:first').fadeOut(1000).next().fadeIn(1000).end().appendTo('#SlideShowImages');
+            }, 3000);
+        });
+    </script>
+}
+

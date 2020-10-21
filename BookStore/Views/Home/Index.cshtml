@@ -1,30 +1,71 @@
 ﻿
 @{
-    Layout = null;
+    ViewData["Title"] = "_ViewStart";
+    ViewData["Desc"] = "Home";
+    var b1 = ViewData["boookData"] as BookModel;
 }
 
-<!DOCTYPE html>
+<section class="jumbotron text-center ">
+    <h3>Welcome to Bookstore @ViewBag.Title1 || @ViewData["customProperty"] </h3>
+    <p>A book communicates knowledge, and not only knowledge but wisdom of all kinds. They say that “The more you read, the more well-read you are”. In simple terms what this means is that the more you read the more exposed you are, your attitudes, your ideas and your imagination changes.Nothing can add to our intellect more than reading a book.</p>
+    <center>
+        <h3>@b1.Id | @b1.Language | @b1.Author | @b1.Category | @b1.Description | @b1.Title | @b1.TotalPages </h3>
+        <!--<div class="search row">-->
+        <!--<input type="text" placeholder="Search..." name="search" class="round" />-->
+        <button class="btn btn-primary" onclick="">Search Books</button>
+        <!--<div class="search row">
+        <input type="search" name="keywords" id="keywords" placeholder="Search" class="flex-1 text-s round row-cols-xl-1" />
+        <button class="btn btn-primary row-cols-xl-2">Go</button>
+        <img class=" small" src="~/images/search.png" style="height:30px;width:30px;" />
+        </div>-->
+    </center>
+</section>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="~/css/StyleSheet.css" rel="stylesheet" />
-</head>
-<body>
+<div class="container">
+    Top Picks for you...
     <div class="row">
-        <img src="~/images/download.jpg" class="logo row-cols-1" />
-        <h3 class="row-cols-2"><b>Welcome to Book Store Application</b></h3>
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="~/images/Old Drift.jpg" />
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="#" class="btn btn-outline-primary">View Details</a>
+                        <small>author</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="~/images/One of ours.jpg" />
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="#" class="btn btn-outline-primary">View Details</a>
+                        <small>author</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="~/images/Scarlet.jpg" />
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="#" class="btn btn-outline-primary">View Details</a>
+                        <small>author</small>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <br/><button class="btn btn-primary">Click Me</button>
- </body>
-</html>
-<script src="~/lib/jquery/jquery.js"></script>
-<script>
-    $(document).ready(function () {
-        $("button").click(function () {
-            alert("Click Me button was clicked");
-        });
-    });
-</script>
+</div>
+
+@section sccript{
+   
+}

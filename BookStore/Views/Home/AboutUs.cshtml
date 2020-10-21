@@ -1,15 +1,12 @@
-﻿
+﻿@using BookStore.Models
 @{
-    Layout = null;
+    ViewData["Title"] = "_ViewStart";
+    ViewData["Desc"] = "About Us";
 }
+<h1>This is the about us Page</h1>
+@ViewData["Name"]<br/>
+@ViewData["Age"]<br/>
+@ViewData["Contact"]<br/>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>AboutUs</title>
-</head>
-<body>
-</body>
-</html>
+@section sccript{
+}
